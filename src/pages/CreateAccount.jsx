@@ -110,7 +110,7 @@ const CreateAccount = () => {
               </div>
             </div>
             <button
-              className={`w-[328px] bg-[#000000] text-[#fff] sm:w-[416px] md:w-full mt-8 py-[8px] rounded-[2px] flex justify-center items-center gap-3 text-[14px] font-[700]`}
+              className={`w-[328px] hover:bg-[#161616] transition-all ease-in bg-[#000000] text-[#fff] sm:w-[416px] md:w-full mt-8 py-[8px] rounded-[2px] flex justify-center items-center gap-3 text-[14px] font-[700]`}
               onClick={() => navigate("/verify-account")}
             >
               Create account

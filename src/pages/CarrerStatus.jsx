@@ -21,13 +21,13 @@ const CarrerStatus = () => {
             <div className="flex flex-col gap-3">
               {options &&
                 options.map((option, index) => (
-                  <div key={index} className={` ${selected && (selected.name == option.name && "text-white bg-[#0B8659] ")} border rounded-[40px] p-2 text-center font-[700] text-[14px] cursor-pointer transition-all ease-in`}onClick={()=> setselected(option)}>
+                  <div key={index} className={` ${selected && (selected.name == option.name && "text-white bg-[#0B8659] ")} border rounded-[40px] p-2 hover:bg-[#0b865934] text-center font-[700] text-[14px] cursor-pointer transition-all ease-in`}onClick={()=> setselected(option)}>
                     {option.name}
                   </div>
                 ))}
             </div>
             <button
-              className={`w-[328px] bg-[#000000] text-[#fff] sm:w-[416px] mt-4 py-[8px] rounded-[2px] flex justify-center items-center gap-3 text-[14px] font-[700] absolute sm:relative bottom-0 `}
+              className={`w-[328px] hover:bg-[#161616] transition-all ease-in bg-[#000000] text-[#fff] sm:w-[416px] mt-4 py-[8px] rounded-[2px] flex justify-center items-center gap-3 text-[14px] font-[700] absolute sm:relative bottom-0 `}
               onClick={() => navigate("/setup-profile")}
             >
               Continue

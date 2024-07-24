@@ -54,7 +54,7 @@ const AccountSelect = () => {
                       (selected.name == ac.name
                         ? "border-[#818181] bg-[#F5F5F5]"
                         : "border-[#E8E8E8] ")
-                    } border rounded-[2px] p-4 w-[328px] sm:w-[268px] flex flex-col gap-1 transition-all ease-in cursor-pointer`}
+                    } border rounded-[2px] p-4 w-[328px] sm:w-[268px] flex flex-col gap-1 hover:bg-[#F5F5F5] transition-all ease-in cursor-pointer`}
                     onClick={() => {
                       if (ac.status === 1) return;
                       setSelected(ac);

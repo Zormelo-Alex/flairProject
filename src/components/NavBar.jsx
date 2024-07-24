@@ -46,20 +46,20 @@ const NavBar = ({ simple, back }) => {
               <img src={logo} alt="img" className="w-[23px] object-cover" />
             </div>
             <ul className="md:flex justify-center items-center gap-[5dvw] font-[500] col-span-6 hidden">
-              <li>
-                <Link to={"/sign-up"} className="flex items-center gap-2">
+              <li >
+                <Link to={"/sign-up"} className="flex items-center gap-2 hover:text-[#0B8659] transition-all ease-in">
                   <RiBriefcaseLine />
                   <p>Jobs</p>
                 </Link>
               </li>
               <li>
-                <Link to={"/sign-up"} className="flex items-center gap-2">
+                <Link to={"/sign-up"} className="flex items-center gap-2 hover:text-[#0B8659] transition-all ease-in">
                   <RiUserStarLine />
                   <p>Mentorship</p>
                 </Link>
               </li>
               <li>
-                <Link to={"/sign-up"} className="flex items-center gap-2">
+                <Link to={"/sign-up"} className="flex items-center gap-2 hover:text-[#0B8659] transition-all ease-in">
                   <PiProjectorScreenBold />
                   <p>Trainings</p>
                 </Link>
@@ -67,11 +67,11 @@ const NavBar = ({ simple, back }) => {
             </ul>
             <div className="sm:flex justify-end gap-3 col-span-3 items-center">
               <div className="sm:flex gap-3 hidden">
-                <button className="rounded-[2px] px-[16px] font-[700] py-[14px] border">
+                <button className="rounded-[2px] px-[16px] font-[700] py-[14px] border hover:bg-[#ebebeb83] transition-all ease-in">
                   Log in
                 </button>
                 <button
-                  className="rounded-[2px] px-[16px] font-[700] py-[14px] text-white bg-black"
+                  className="rounded-[2px] px-[16px] font-[700] py-[14px] text-white bg-black hover:bg-[#333333] transition-all ease-in"
                   onClick={() => navigate("/sign-up")}
                 >
                   Sign up
@@ -89,19 +89,19 @@ const NavBar = ({ simple, back }) => {
             <div className="md:hidden absolute bg-white top-[9rem] shadow-sm z-20 min-w-[200px] p-4 right-[2rem] rounded-[2px]">
               <ul className="flex flex-col justify-center gap-[25px] font-[500] col-span-6 ">
                 <li>
-                  <Link to={"/sign-up"} className="flex items-center gap-2">
+                  <Link to={"/sign-up"} className="flex items-center gap-2 hover:text-[#0B8659] transition-all ease-in">
                     <RiBriefcaseLine />
                     <p>Jobs</p>
                   </Link>
                 </li>
                 <li>
-                  <Link to={"/sign-up"} className="flex items-center gap-2">
+                  <Link to={"/sign-up"} className="flex items-center gap-2 hover:text-[#0B8659] transition-all ease-in">
                     <RiUserStarLine />
                     <p>Mentorship</p>
                   </Link>
                 </li>
                 <li>
-                  <Link to={"/sign-up"} className="flex items-center gap-2">
+                  <Link to={"/sign-up"} className="flex items-center gap-2 hover:text-[#0B8659] transition-all ease-in">
                     <PiProjectorScreenBold />
                     <p>Trainings</p>
                   </Link>
