@@ -35,7 +35,7 @@ const NavBar = ({ simple }) => {
             </div>
           </div>
           <div className="px-[42px] items-center flex justify-between md:grid md:grid-cols-12 py-4">
-            <div className="flex items-center col-span-3">
+            <div className="flex items-center col-span-3 cursor-pointer" onClick={()=> navigate("/")}>
               <h3 className="text-[#0B8659] font-extrabold text-[30px]">
                 flair
               </h3>
@@ -116,7 +116,7 @@ const NavBar = ({ simple }) => {
         </>
       ) : (
         <>
-          <div className="flex items-center justify-center py-3 border-b">
+          <div className="flex items-center justify-center py-3 border-b cursor-pointer" onClick={()=> navigate("/")}>
             <h3 className="text-[#0B8659] font-extrabold text-[30px]">flair</h3>
             <img src={logo} alt="img" className="w-[23px] object-cover" />
           </div>
