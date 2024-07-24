@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { verify } from "../assets";
 
 const VerifyAccount = () => {
   const navigate = useNavigate();
+  useEffect(()=> {
+    setTimeout(() => {
+        navigate("/career-status")
+    }, 3000);
+  }, [])
   return (
     <div className="w-full h-[583px] pri">
       <div className="w-full h-full bg-white flex justify-center items-center">

@@ -4,7 +4,7 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 import Layout from "../layouts/Layout";
-import { AccountSelect, CreateAccount, ErrorPage, LandingPage, PageNotFound, VerifyAccount } from "../pages";
+import { AccountSelect, CarrerStatus, CreateAccount, ErrorPage, LandingPage, PageNotFound, ProfileSetup, VerifyAccount } from "../pages";
 
 const Routes = createBrowserRouter(
   createRoutesFromElements(
@@ -20,6 +20,12 @@ const Routes = createBrowserRouter(
       </Route>
       <Route path="/verify-account" element={<Layout simple={true}/>}>
         <Route index element={<VerifyAccount />} errorElement={<ErrorPage />} />
+      </Route>
+      <Route path="/career-status" element={<Layout simple={true}/>}>
+        <Route index element={<CarrerStatus />} errorElement={<ErrorPage />} />
+      </Route>
+      <Route path="/setup-profile" element={<Layout simple={true}/>}>
+        <Route index element={<ProfileSetup />} errorElement={<ErrorPage />} />
       </Route>
 
       <Route path="*" element={<PageNotFound />} />
