@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import SideBar from "../components/SideBar";
 import { RiBook2Line } from "react-icons/ri";
 import { RiBriefcaseLine, RiUploadCloudLine } from "react-icons/ri";
@@ -6,6 +6,7 @@ import { IoStarHalfSharp } from "react-icons/io5";
 import { FiAward, FiPlus } from "react-icons/fi";
 import { TfiCup } from "react-icons/tfi";
 import { useNavigate } from "react-router-dom";
+import { Accomplishment, Education, Experience, Resume } from "../components";
 
 const ProfileSetup = () => {
   const profileTasks = [
@@ -46,7 +47,41 @@ const ProfileSetup = () => {
       description: "CV, portfolio",
     },
   ];
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const [educationModelOpen, seteducationModelOpen] = useState(false);
+  const [experienceModelOpen, setexperienceModelOpen] = useState(false);
+  const [resumeModelOpen, setresumeModelOpen] = useState(false);
+  const [accomplishmentsModelOpen, setaccomplishmentsModelOpen] =
+    useState(false);
+
+  const handleTask = (task) => {
+    try {
+      seteducationModelOpen(false);
+      setexperienceModelOpen(false);
+      setaccomplishmentsModelOpen(false);
+      setresumeModelOpen(false);
+      switch (task.name) {
+        case "Education":
+          seteducationModelOpen(true);
+          break;
+        case "Work Experience":
+          setexperienceModelOpen(true);
+          break;
+        case "Acomplishments":
+          setaccomplishmentsModelOpen(true);
+          break;
+        case "Upload Resume":
+          setresumeModelOpen(true);
+          break;
+
+        default:
+          break;
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="w-full h-[583px] pri">
       <div className="w-full h-full bg-white flex justify-center items-center">
@@ -65,9 +100,10 @@ const ProfileSetup = () => {
                   profileTasks.map((task, index) => (
                     <div
                       key={index}
-                      className={`flex justify-between py-3 ${
+                      className={`flex justify-between py-3 cursor-pointer ${
                         index != profileTasks.length - 1 && "border-b"
                       }`}
+                      onClick={() => handleTask(task)}
                     >
                       <div className="flex gap-3">
                         <div>{task.icon}</div>
@@ -80,7 +116,7 @@ const ProfileSetup = () => {
                           </p>
                         </div>
                       </div>
-                      <div>
+                      <div className="w-fit">
                         <FiPlus />
                       </div>
                     </div>
@@ -104,6 +140,20 @@ const ProfileSetup = () => {
           </div>
         </div>
       </div>
+      {/* models */}
+      <Education
+        isOpen={educationModelOpen}
+        setIsOpen={seteducationModelOpen}
+      />
+      <Experience
+        isOpen={experienceModelOpen}
+        setIsOpen={setexperienceModelOpen}
+      />
+      <Resume isOpen={resumeModelOpen} setIsOpen={setresumeModelOpen} />
+      <Accomplishment
+        isOpen={accomplishmentsModelOpen}
+        setIsOpen={setaccomplishmentsModelOpen}
+      />
     </div>
   );
 };

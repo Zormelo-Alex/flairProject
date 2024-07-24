@@ -18,7 +18,7 @@ const SideBar = ({profileTasks}) => {
           <h3 className="font-[500] text-white text-[16px]">
             Profile <br /> Completion
           </h3>
-          <ProgressBar progress={10} />
+          <ProgressBar progress={0} />
         </div>
       </div>
       <div className="flex-col gap-3 p-4 hidden sm:flex">

@@ -24,7 +24,7 @@ const Routes = createBrowserRouter(
       <Route path="/career-status" element={<Layout simple={true}/>}>
         <Route index element={<CarrerStatus />} errorElement={<ErrorPage />} />
       </Route>
-      <Route path="/setup-profile" element={<Layout simple={true}/>}>
+      <Route path="/setup-profile" element={<Layout simple={true} back={true}/>}>
         <Route index element={<ProfileSetup />} errorElement={<ErrorPage />} />
       </Route>
 

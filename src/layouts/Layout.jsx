@@ -2,10 +2,10 @@ import React from "react";
 import { NavBar } from "../components";
 import { Outlet } from "react-router-dom";
 
-const Layout = ({simple}) => {
+const Layout = ({simple, back}) => {
   return (
     <div className={!simple && "bg-[#f5f5f5] h-screen"}>
-      <NavBar simple={simple}/>
+      <NavBar simple={simple} back={back}/>
       <Outlet />
     </div>
   );

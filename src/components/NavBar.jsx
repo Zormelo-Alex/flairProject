@@ -4,8 +4,9 @@ import { RiBriefcaseLine, RiUserStarLine } from "react-icons/ri";
 import { PiProjectorScreenBold } from "react-icons/pi";
 import { LuMenu } from "react-icons/lu";
 import { Link, useNavigate } from "react-router-dom";
+import { FaArrowLeftLong } from "react-icons/fa6";
 
-const NavBar = ({ simple }) => {
+const NavBar = ({ simple, back }) => {
   const [navOption, setnavOption] = useState(1);
   const [isMenuOpen, setisMenuOpen] = useState(false);
   const navigate = useNavigate();
@@ -35,7 +36,10 @@ const NavBar = ({ simple }) => {
             </div>
           </div>
           <div className="px-[42px] items-center flex justify-between md:grid md:grid-cols-12 py-4">
-            <div className="flex items-center col-span-3 cursor-pointer" onClick={()=> navigate("/")}>
+            <div
+              className="flex items-center col-span-3 cursor-pointer"
+              onClick={() => navigate("/")}
+            >
               <h3 className="text-[#0B8659] font-extrabold text-[30px]">
                 flair
               </h3>
@@ -66,7 +70,10 @@ const NavBar = ({ simple }) => {
                 <button className="rounded-[2px] px-[16px] font-[700] py-[14px] border">
                   Log in
                 </button>
-                <button className="rounded-[2px] px-[16px] font-[700] py-[14px] text-white bg-black" onClick={() => navigate("/sign-up")}>
+                <button
+                  className="rounded-[2px] px-[16px] font-[700] py-[14px] text-white bg-black"
+                  onClick={() => navigate("/sign-up")}
+                >
                   Sign up
                 </button>
               </div>
@@ -116,9 +123,25 @@ const NavBar = ({ simple }) => {
         </>
       ) : (
         <>
-          <div className="flex items-center justify-center py-3 border-b cursor-pointer" onClick={()=> navigate("/")}>
-            <h3 className="text-[#0B8659] font-extrabold text-[30px]">flair</h3>
-            <img src={logo} alt="img" className="w-[23px] object-cover" />
+          <div className={`${back ? " grid grid-cols-3 sm:grid-cols-2 md:grid-cols-1 " : "flex w-full justify-center"} border-b  py-3 px-4`}>
+            {back && (
+              <div
+                className="flex items-center gap-3 md:hidden"
+                onClick={() => window.history.back()}
+              >
+                <FaArrowLeftLong />
+                <span className="hidden sm:block">Back</span>
+              </div>
+            )}
+            <div
+              className="flex items-center justify-center cursor-pointer"
+              onClick={() => navigate("/")}
+            >
+              <h3 className="text-[#0B8659] font-extrabold text-[30px]">
+                flair
+              </h3>
+              <img src={logo} alt="img" className="w-[23px] object-cover" />
+            </div>
           </div>
         </>
       )}
