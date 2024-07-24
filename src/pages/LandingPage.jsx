@@ -99,7 +99,7 @@ const LandingPage = () => {
             className="h-[64px] w-[64px] rounded-full object-cover"
           />
         </div>
-        <div className="absolute right-[62dvw] bottom-[5rem]">
+        <div className="absolute right-[85dvw] sm:right-[62dvw] bottom-[5rem]">
           <div className="relative z-10">
             <Five classname="opacity-0 sm:opacity-100" />
             <img
