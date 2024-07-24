@@ -4,7 +4,7 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 import Layout from "../layouts/Layout";
-import { AccountSelect, CreateAccount, ErrorPage, LandingPage, PageNotFound } from "../pages";
+import { AccountSelect, CreateAccount, ErrorPage, LandingPage, PageNotFound, VerifyAccount } from "../pages";
 
 const Routes = createBrowserRouter(
   createRoutesFromElements(
@@ -17,6 +17,9 @@ const Routes = createBrowserRouter(
       </Route>
       <Route path="/create-account" element={<Layout simple={true}/>}>
         <Route index element={<CreateAccount />} errorElement={<ErrorPage />} />
+      </Route>
+      <Route path="/verify-account" element={<Layout simple={true}/>}>
+        <Route index element={<VerifyAccount />} errorElement={<ErrorPage />} />
       </Route>
 
       <Route path="*" element={<PageNotFound />} />

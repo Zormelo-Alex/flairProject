@@ -15,6 +15,7 @@ import candidate from "./images/candidate.png";
 import employer from "./images/employer.png";
 import mentor from "./images/mentor.png";
 import trainer from "./images/trainer.png";
+import verify from "./images/verify.png";
 
 export {
   One,
@@ -34,4 +35,5 @@ export {
   trainer,
   mentor,
   employer,
+  verify,
 };
