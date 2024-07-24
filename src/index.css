@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.pri {
+  font-family: "Public Sans", sans-serif;
+}
+.sec {
+  font-family: "Signika", sans-serif;
+}
