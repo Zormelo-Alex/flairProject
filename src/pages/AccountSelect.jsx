@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { candidate, employer, mentor, trainer } from "../assets";
 import { FaArrowRight } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const AccountSelect = () => {
   const acTypes = [
@@ -92,7 +94,7 @@ const AccountSelect = () => {
               className={`${
                 selected
                   ? "bg-[#000000] text-[#fff]"
-                  : "bg-[#E8E8E8] text-[#818181] "
+                  : "bg-[#E8E8E8] text-[#818181] cursor-not-allowed"
               } w-[328px] sm:w-[560px] mt-8 py-[8px] rounded-[2px] flex justify-center items-center gap-3 text-[14px] font-[700]`}
               onClick={() => navigate("/create-account")}
             >
