@@ -62,7 +62,7 @@ const AccountSelect = () => {
                       <img
                         src={ac.image}
                         alt="img"
-                        className="h-[56px] w-fit"
+                        className="h-[56px] w-fit object-contain"
                       />
                       {ac.status == 1 && (
                         <p className="text-[#D98F00] text-[12px] bg-[#FCF4E6] px-[8px] py-[5px] rounded-[2px] absolute right-[-16px] top-[-16px]">

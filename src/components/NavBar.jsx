@@ -47,19 +47,19 @@ const NavBar = ({ simple, back }) => {
             </div>
             <ul className="md:flex justify-center items-center gap-[5dvw] font-[500] col-span-6 hidden">
               <li>
-                <Link to={"#"} className="flex items-center gap-2">
+                <Link to={"/sign-up"} className="flex items-center gap-2">
                   <RiBriefcaseLine />
                   <p>Jobs</p>
                 </Link>
               </li>
               <li>
-                <Link to={"#"} className="flex items-center gap-2">
+                <Link to={"/sign-up"} className="flex items-center gap-2">
                   <RiUserStarLine />
                   <p>Mentorship</p>
                 </Link>
               </li>
               <li>
-                <Link to={"#"} className="flex items-center gap-2">
+                <Link to={"/sign-up"} className="flex items-center gap-2">
                   <PiProjectorScreenBold />
                   <p>Trainings</p>
                 </Link>
@@ -89,19 +89,19 @@ const NavBar = ({ simple, back }) => {
             <div className="md:hidden absolute bg-white top-[9rem] shadow-sm z-20 min-w-[200px] p-4 right-[2rem] rounded-[2px]">
               <ul className="flex flex-col justify-center gap-[25px] font-[500] col-span-6 ">
                 <li>
-                  <Link to={"#"} className="flex items-center gap-2">
+                  <Link to={"/sign-up"} className="flex items-center gap-2">
                     <RiBriefcaseLine />
                     <p>Jobs</p>
                   </Link>
                 </li>
                 <li>
-                  <Link to={"#"} className="flex items-center gap-2">
+                  <Link to={"/sign-up"} className="flex items-center gap-2">
                     <RiUserStarLine />
                     <p>Mentorship</p>
                   </Link>
                 </li>
                 <li>
-                  <Link to={"#"} className="flex items-center gap-2">
+                  <Link to={"/sign-up"} className="flex items-center gap-2">
                     <PiProjectorScreenBold />
                     <p>Trainings</p>
                   </Link>
@@ -123,7 +123,13 @@ const NavBar = ({ simple, back }) => {
         </>
       ) : (
         <>
-          <div className={`${back ? " grid grid-cols-3 sm:grid-cols-2 md:grid-cols-1 " : "flex w-full justify-center"} border-b  py-3 px-4`}>
+          <div
+            className={`${
+              back
+                ? " grid grid-cols-3 sm:grid-cols-2 md:grid-cols-1 "
+                : "flex w-full justify-center"
+            } border-b  py-3 px-4`}
+          >
             {back && (
               <div
                 className="flex items-center gap-3 md:hidden"

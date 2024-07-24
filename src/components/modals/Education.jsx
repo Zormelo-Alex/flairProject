@@ -82,7 +82,7 @@ const Education = ({ onClick, isOpen, setIsOpen }) => {
               className="w-full border border-[#E8E8E8] rounded-[2px] h-[45px] outline-none px-2"
             />
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 gap-3">
             <div className="flex flex-col">
               <label htmlFor="" className="text-xs text-[#818181] font-[500]">
                 Start date

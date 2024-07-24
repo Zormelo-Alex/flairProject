@@ -69,7 +69,7 @@ const Experience = ({ onClick, isOpen, setIsOpen }) => {
               <option value="">Inpath</option>
             </select>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 gap-3">
             <div className="flex flex-col">
               <label htmlFor="" className="text-xs text-[#818181] font-[500]">
                 Start date

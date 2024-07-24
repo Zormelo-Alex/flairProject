@@ -43,7 +43,7 @@ const LandingPage = () => {
             <select
               name=""
               id=""
-              className="flex items-center cursor-pointer h-[48px] sm:h-fit w-[328px] bg-white rounded-[40px] p-3 py-4 md:w-[144px] outline-none"
+              className="flex items-center cursor-pointer min-h-[48px] sm:h-fit w-[328px] bg-white rounded-[40px] p-3 py-4 md:w-[144px] outline-none"
             >
               <option value="">Jobs</option>
               <option value="">Listings</option>
@@ -75,7 +75,7 @@ const LandingPage = () => {
             />
           </div>
         </div>
-        <div className="absolute right-[5rem] top-[13rem] sm:top-[15rem]">
+        <div className="absolute right-[5rem] top-[17rem] sm:top-[15rem]">
           <img
             src={three}
             alt="img"
@@ -99,7 +99,7 @@ const LandingPage = () => {
             className="h-[64px] w-[64px] rounded-full object-cover"
           />
         </div>
-        <div className="absolute right-[55dvw] bottom-[6rem]">
+        <div className="absolute right-[62dvw] bottom-[5rem]">
           <div className="relative z-10">
             <Five classname="opacity-0 sm:opacity-100" />
             <img

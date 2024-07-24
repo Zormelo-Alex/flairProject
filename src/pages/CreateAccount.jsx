@@ -30,7 +30,7 @@ const CreateAccount = () => {
                 />
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <div className="flex flex-col">
+                <div className="flex flex-col w-full">
                   <label
                     htmlFor=""
                     className="text-[14px] text-[#818181] font-[500]"
@@ -39,7 +39,7 @@ const CreateAccount = () => {
                   </label>
                   <input
                     type="date"
-                    className="w-full border border-[#E8E8E8] rounded-[2px] h-[45px] outline-none px-2"
+                    className="w-[328px] border border-[#E8E8E8] rounded-[2px] h-[45px] outline-none px-2"
                   />
                 </div>
                 <div className="flex flex-col">
@@ -110,7 +110,7 @@ const CreateAccount = () => {
               </div>
             </div>
             <button
-              className={`w-[328px] bg-[#000000] text-[#fff] sm:w-[416px] mt-8 py-[8px] rounded-[2px] flex justify-center items-center gap-3 text-[14px] font-[700]`}
+              className={`w-[328px] bg-[#000000] text-[#fff] sm:w-[416px] md:w-full mt-8 py-[8px] rounded-[2px] flex justify-center items-center gap-3 text-[14px] font-[700]`}
               onClick={() => navigate("/verify-account")}
             >
               Create account
