@@ -22,7 +22,7 @@ const LandingPage = () => {
     <div className="bg-[#F5F5F5] h-[580px] overflow-x-hidden">
       <div className="w-full h-full relative">
         <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] sec">
-          <h2 className="font-[900] text-[32px] sm:text-[48px] md:text-[62px]">
+          <h2 className="font-[900] text-[32px] sm:text-[48px] md:text-[62px]" data-aos="fade-right">
             Discover a greater you.
           </h2>
           <p className="font-[700] text-[18px] sm:text-[28px] md:text-[35px]">
@@ -55,7 +55,7 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
-        <div className="absolute right-[15dvw] top-[3rem]">
+        <div className="absolute right-[15dvw] top-[3rem]" data-aos="flip-right">
           <div className="relative z-10">
             <One classname={"opacity-0 sm:opacity-100"}/>
             <img
@@ -65,7 +65,7 @@ const LandingPage = () => {
             />
           </div>
         </div>
-        <div className="absolute left-[9dvw] lg:top-[21dvh] md:top-[9dvh] top-[5dvh] hidden sm:block">
+        <div className="absolute left-[9dvw] lg:top-[21dvh] md:top-[9dvh] top-[5dvh] hidden sm:block" data-aos="flip-right">
           <div className="relative z-10">
             <Two />
             <img
@@ -75,14 +75,14 @@ const LandingPage = () => {
             />
           </div>
         </div>
-        <div className="absolute right-[5rem] top-[17rem] sm:top-[15rem]">
+        <div className="absolute right-[5rem] top-[17rem] sm:top-[15rem]" data-aos="flip-up">
           <img
             src={three}
             alt="img"
             className="h-[38px] sm:h-[51px] sm:w-[51px] rounded-full object-cover"
           />
         </div>
-        <div className="absolute right-[-10dvw] lg:right-0 top-[22rem] lg:top-[19rem] hidden sm:block">
+        <div className="absolute right-[-10dvw] lg:right-0 top-[22rem] lg:top-[19rem] hidden sm:block" data-aos="flip-left">
           <div className="relative z-10">
             <Three />
             <img
@@ -92,7 +92,7 @@ const LandingPage = () => {
             />
           </div>
         </div>
-        <div className="absolute right-[36dvw] bottom-[0rem] hidden sm:block">
+        <div className="absolute right-[36dvw] bottom-[0rem] hidden sm:block" data-aos="flip-right">
           <img
             src={five}
             alt="img"
@@ -109,7 +109,7 @@ const LandingPage = () => {
             />
           </div>
         </div>
-        <div className="absolute left-[25dvw] bottom-[4rem] hidden sm:block">
+        <div className="absolute left-[25dvw] bottom-[4rem] hidden sm:block" data-aos="flip-right">
           <div className="relative z-10">
             <Four />
             <img
@@ -119,7 +119,7 @@ const LandingPage = () => {
             />
           </div>
         </div>
-        <div className="absolute left-[5dvw] bottom-[8rem] hidden sm:block">
+        <div className="absolute left-[5dvw] bottom-[8rem] hidden sm:block" data-aos="flip-up">
           <img
             src={eight}
             alt="img"
