@@ -16,6 +16,7 @@ import employer from "./images/employer.png";
 import mentor from "./images/mentor.png";
 import trainer from "./images/trainer.png";
 import verify from "./images/verify.png";
+import profile from "./images/profile.png";
 
 export {
   One,
@@ -36,4 +37,5 @@ export {
   mentor,
   employer,
   verify,
+  profile
 };

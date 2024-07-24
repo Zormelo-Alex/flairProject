@@ -1,3 +1,5 @@
-import NavBar from "./NavBar"
+import NavBar from "./NavBar";
+import SideBar from "./SideBar";
+import ProgressBar from "./ProgressBar";
 
-export {NavBar}
+export { NavBar, SideBar, ProgressBar };
