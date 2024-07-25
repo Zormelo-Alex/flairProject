@@ -5,7 +5,7 @@ import { AiOutlineCheckCircle } from "react-icons/ai";
 const SuccessPage = () => {
   const navigate = useNavigate();
   return (
-    <div className="h-[583px] flex flex-col items-center justify-center bg-gradient-to-r from-[#0B8659] to-white">
+    <div className="h-[583px] flex flex-col items-center justify-center bg-gradient-to-r from-[#0B8659] to-white p-4">
       <div className="bg-white p-8 rounded-[2px] shadow-lg text-center">
         <AiOutlineCheckCircle className="text-[#0B8659] text-6xl mx-auto" />
         <h1 className="text-3xl font-bold mt-4">Success!</h1>
