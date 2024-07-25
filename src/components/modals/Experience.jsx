@@ -33,71 +33,82 @@ const Experience = ({ onClick, isOpen, setIsOpen }) => {
             </svg>
           </button>
         </div>
-        <div className="bg-[#319CFF1A] px-4 py-3 flex gap-3 items-center">
-          <AiFillInfoCircle className="text-[#319CFF] text-[40px]" />
-          <p className="text-xs">
-            Link your NSS details to Flair to make you more credible to
-            employers.
-          </p>
-          <button className="whitespace-nowrap text-xs bg-black text-white p-2 rounded-[2px]">
-            Link NSS
-          </button>
-        </div>
-        <div className="flex flex-col gap-4 mt-4 px-4 py-3">
-          <div className="flex flex-col">
-            <label htmlFor="" className="text-xs text-[#818181] font-[500]">
-              Job Title
-            </label>
-            <input
-              type="text"
-              className="w-full border border-[#E8E8E8] rounded-[2px] h-[45px] outline-none px-2"
-            />
+        <form action="">
+          <div className="bg-[#319CFF1A] px-4 py-3 flex gap-3 items-center">
+            <AiFillInfoCircle className="text-[#319CFF] text-[40px]" />
+            <p className="text-xs">
+              Link your NSS details to Flair to make you more credible to
+              employers.
+            </p>
+            <button className="whitespace-nowrap text-xs bg-black text-white p-2 rounded-[2px]">
+              Link NSS
+            </button>
           </div>
-          <div className="flex flex-col">
-            <label
-              htmlFor="dlCompany"
-              className="text-xs text-[#818181] font-[500]"
-            >
-              Company
-            </label>
-            <select
-              name=""
-              id=""
-              className="w-full border text-xs border-[#E8E8E8] rounded-[2px] h-[45px] outline-none px-2"
-            >
-              <option value="">Search Company</option>
-              <option value="">Inpath</option>
-            </select>
-          </div>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="flex flex-col gap-4 mt-4 px-4 py-3">
             <div className="flex flex-col">
               <label htmlFor="" className="text-xs text-[#818181] font-[500]">
-                Start date
+                Job Title
               </label>
               <input
-                type="date"
+                type="text"
                 className="w-full border border-[#E8E8E8] rounded-[2px] h-[45px] outline-none px-2"
               />
             </div>
             <div className="flex flex-col">
-              <label htmlFor="" className="text-xs text-[#818181] font-[500]">
-                End date
+              <label
+                htmlFor="dlCompany"
+                className="text-xs text-[#818181] font-[500]"
+              >
+                Company
               </label>
-              <input
-                type="date"
-                className="w-full border border-[#E8E8E8] rounded-[2px] h-[45px] outline-none px-2"
-              />
+              <select
+                name=""
+                id=""
+                className="w-full border text-xs border-[#E8E8E8] rounded-[2px] h-[45px] outline-none px-2"
+              >
+                <option value="">Search Company</option>
+                <option value="">Inpath</option>
+              </select>
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              <div className="flex flex-col">
+                <label htmlFor="" className="text-xs text-[#818181] font-[500]">
+                  Start date
+                </label>
+                <input
+                  type="date"
+                  className="w-full border border-[#E8E8E8] rounded-[2px] h-[45px] outline-none px-2"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label htmlFor="" className="text-xs text-[#818181] font-[500]">
+                  End date
+                </label>
+                <input
+                  type="date"
+                  className="w-full border border-[#E8E8E8] rounded-[2px] h-[45px] outline-none px-2"
+                />
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="px-4 py-3 flex gap-3 items-center text-sm">
-          <input type="checkbox" id="ch" />
-          <label htmlFor="ch">I currently work here</label>
-        </div>
-        <div className="text-sm flex justify-end px-4 py-3">
-          <button className="bg-[#E8E8E8] px-6 rounded-[2px] py-2 text-[#818181]">Save</button>
-        </div>
+          <div className="px-4 py-3 flex gap-3 items-center text-sm">
+            <input type="checkbox" id="ch" />
+            <label htmlFor="ch">I currently work here</label>
+          </div>
+          <div className="text-sm flex justify-end px-4 py-3">
+            <button
+              className="bg-[#E8E8E8] px-6 rounded-[2px] py-2 text-[#818181] hover:text-white hover:bg-black transition-all ease-in"
+              onClick={(e) => {
+                e.preventDefault();
+                setIsOpen(false);
+                onClick();
+              }}
+            >
+              Save
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   );

@@ -33,65 +33,74 @@ const Resume = ({ onClick, isOpen, setIsOpen }) => {
             </svg>
           </button>
         </div>
-        <div className="text-sm mt-4 px-4 py-3 flex flex-col gap-6">
-          <div className="flex flex-col gap-3">
-            <h3 className="font-[700] ">Resume/CV</h3>
-            <p className="text-[#818181]">
-              Format should be either .pdf, .docx, .doc
-            </p>
-            <div className="border-dashed border flex w-full">
-              <input
-                type="file"
-                id="file"
-                accept=".pdf, .docx, .doc"
-                className="hidden"
-              />
-              <label
-                htmlFor="file"
-                className="w-full flex justify-between py-5 px-2"
-              >
-                <div className="flex items-center gap-2 text-[#737377]">
-                  <IoArrowDownCircleOutline className="text-[18px]" />
-                  <p className="text-xs">Drop file here</p>
-                </div>
-                <p className="border rounded-[2px] py-1 px-4 text-black">
-                  Browse
-                </p>
-              </label>
+        <form action="">
+          <div className="text-sm mt-4 px-4 py-3 flex flex-col gap-6">
+            <div className="flex flex-col gap-3">
+              <h3 className="font-[700] ">Resume/CV</h3>
+              <p className="text-[#818181]">
+                Format should be either .pdf, .docx, .doc
+              </p>
+              <div className="border-dashed border flex w-full">
+                <input
+                  type="file"
+                  id="file"
+                  accept=".pdf, .docx, .doc"
+                  className="hidden"
+                />
+                <label
+                  htmlFor="file"
+                  className="w-full flex justify-between py-5 px-2"
+                >
+                  <div className="flex items-center gap-2 text-[#737377]">
+                    <IoArrowDownCircleOutline className="text-[18px]" />
+                    <p className="text-xs">Drop file here</p>
+                  </div>
+                  <p className="border rounded-[2px] py-1 px-4 text-black">
+                    Browse
+                  </p>
+                </label>
+              </div>
+            </div>
+            <div className="flex flex-col gap-3">
+              <h3 className="font-[700] ">Other files eg. portfolio</h3>
+              <p className="text-[#818181]">
+                Format should be either .pdf, .docx, .doc
+              </p>
+              <div className="border-dashed border flex w-full">
+                <input
+                  type="file"
+                  id="file"
+                  accept=".pdf, .docx, .doc"
+                  className="hidden"
+                />
+                <label
+                  htmlFor="file"
+                  className="w-full flex justify-between py-5 px-2"
+                >
+                  <div className="flex items-center gap-2 text-[#737377]">
+                    <IoArrowDownCircleOutline className="text-[18px]" />
+                    <p className="text-xs">Drop file here</p>
+                  </div>
+                  <p className="border rounded-[2px] py-1 px-4 text-black">
+                    Browse
+                  </p>
+                </label>
+              </div>
             </div>
           </div>
-          <div className="flex flex-col gap-3">
-            <h3 className="font-[700] ">Other files eg. portfolio</h3>
-            <p className="text-[#818181]">
-              Format should be either .pdf, .docx, .doc
-            </p>
-            <div className="border-dashed border flex w-full">
-              <input
-                type="file"
-                id="file"
-                accept=".pdf, .docx, .doc"
-                className="hidden"
-              />
-              <label
-                htmlFor="file"
-                className="w-full flex justify-between py-5 px-2"
-              >
-                <div className="flex items-center gap-2 text-[#737377]">
-                  <IoArrowDownCircleOutline className="text-[18px]" />
-                  <p className="text-xs">Drop file here</p>
-                </div>
-                <p className="border rounded-[2px] py-1 px-4 text-black">
-                  Browse
-                </p>
-              </label>
-            </div>
+          <div className="text-sm flex justify-end px-4 py-3">
+            <button
+              className="bg-[#E8E8E8] px-6 rounded-[2px] py-2 text-[#818181] hover:text-white hover:bg-black transition-all ease-in"
+              onClick={(e) => {
+                e.preventDefault();
+                setIsOpen(false);
+                onClick();
+              }}
+            >
+              Save
+            </button>
           </div>
-        </div>
-        <div className="text-sm flex justify-end px-4 py-3">
-          <button className="bg-[#E8E8E8] px-6 rounded-[2px] py-2 text-[#818181]">
-            Save
-          </button>
-        </div>
+        </form>
       </div>
     </div>
   );

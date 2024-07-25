@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SideBar from "../components/SideBar";
 import { RiBook2Line } from "react-icons/ri";
 import { RiBriefcaseLine, RiUploadCloudLine } from "react-icons/ri";
@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { Accomplishment, Education, Experience, Resume } from "../components";
 
 const ProfileSetup = () => {
-  const profileTasks = [
+  const [profileTasks, setProfileTasks] = useState([
     {
       name: "Education",
       status: 0,
@@ -46,13 +46,35 @@ const ProfileSetup = () => {
       icon: <RiUploadCloudLine className="text-[#818181]" />,
       description: "CV, portfolio",
     },
-  ];
+  ])
+  const [percentageNum, setpercentageNum] = useState(0)
+   
   const navigate = useNavigate();
   const [educationModelOpen, seteducationModelOpen] = useState(false);
   const [experienceModelOpen, setexperienceModelOpen] = useState(false);
   const [resumeModelOpen, setresumeModelOpen] = useState(false);
   const [accomplishmentsModelOpen, setaccomplishmentsModelOpen] =
     useState(false);
+
+  const handleAdd = (name) => {
+    try {
+      if(name == "Acomplishments"){
+        updateStatus("Interest & Skills", 1)
+        updateStatus("Certification", 1)
+      }
+      updateStatus(name, 1)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  const updateStatus = (name, newStatus) => {
+    setProfileTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        task.name === name ? { ...task, status: newStatus } : task
+      )
+    );
+  };
 
   const handleTask = (task) => {
     try {
@@ -82,6 +104,12 @@ const ProfileSetup = () => {
     }
   };
 
+  useEffect(()=> {
+    let filter = profileTasks
+    const num = filter.filter(data=> data.status == 1)
+    setpercentageNum(((num.length * 100) / profileTasks.length).toFixed(0))
+  }, [profileTasks])
+
   return (
     <div className="w-full h-[583px] pri">
       <div className="w-full h-full bg-white flex justify-center items-center">
@@ -90,7 +118,7 @@ const ProfileSetup = () => {
             <h3 className="font-[700] text-[24px] sm:text-[28px] sm:hidden">
               Set up your profile.
             </h3>
-            <SideBar profileTasks={profileTasks} />
+            <SideBar profileTasks={profileTasks} percent={percentageNum}/>
             <div className=" sm:w-[435px] md:w-[606px]">
               <h3 className="font-[700] text-[24px] sm:text-[28px] hidden sm:block">
                 Set up your profile.
@@ -100,7 +128,7 @@ const ProfileSetup = () => {
                   profileTasks.map((task, index) => (
                     <div
                       key={index}
-                      className={`flex justify-between py-3 cursor-pointer ${
+                      className={` hover:border-l-[4px] hover:pl-2 hover:border-l-[#0B8659] ease-in transition-all flex justify-between py-3 cursor-pointer ${
                         index != profileTasks.length - 1 && "border-b"
                       }`}
                       onClick={() => handleTask(task)}
@@ -124,14 +152,15 @@ const ProfileSetup = () => {
               </div>
               <div className="w-full grid grid-cols-2 gap-4">
                 <button
-                  className={`bg-[#fff] text-[#000] border mt-8 py-[8px] rounded-[2px] flex justify-center items-center gap-3 text-[14px] font-[700]`}
+                  className={`bg-[#fff] hover:bg-[#e4e4e4] transition-all ease-in text-[#000] border mt-8 py-[8px] rounded-[2px] flex justify-center items-center gap-3 text-[14px] font-[700]`}
                   onClick={() => navigate("/")}
                 >
                   I'll do it later
                 </button>
                 <button
-                  className={`bg-[#E8E8E8] text-[#818181] mt-8 py-[8px] rounded-[2px] flex justify-center items-center gap-3 text-[14px] font-[700]`}
-                  onClick={() => navigate("/verify-account")}
+                disabled={percentageNum != 100}
+                  className={`${percentageNum != 100 ? "cursor-not-allowed bg-[#E8E8E8] text-[#818181] " : "hover:bg-[#161616] transition-all ease-in bg-[#000000] text-[#ffffff]"}  mt-8 py-[8px] rounded-[2px] flex justify-center items-center gap-3 text-[14px] font-[700]`}
+                  onClick={() => navigate("/success")}
                 >
                   Done
                 </button>
@@ -144,15 +173,18 @@ const ProfileSetup = () => {
       <Education
         isOpen={educationModelOpen}
         setIsOpen={seteducationModelOpen}
+        onClick={()=>handleAdd("Education")}
       />
       <Experience
         isOpen={experienceModelOpen}
         setIsOpen={setexperienceModelOpen}
+        onClick={()=>handleAdd("Work Experience")}
       />
-      <Resume isOpen={resumeModelOpen} setIsOpen={setresumeModelOpen} />
+      <Resume isOpen={resumeModelOpen} setIsOpen={setresumeModelOpen} onClick={()=>handleAdd("Upload Resume")}/>
       <Accomplishment
         isOpen={accomplishmentsModelOpen}
         setIsOpen={setaccomplishmentsModelOpen}
+        onClick={()=>handleAdd("Acomplishments")}
       />
     </div>
   );

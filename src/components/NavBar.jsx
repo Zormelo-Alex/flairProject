@@ -23,7 +23,7 @@ const NavBar = ({ simple, back }) => {
                 } p-2 flex rounded-[2px] px-[16px] text-[14px] cursor-pointer transition-all ease-in`}
                 onClick={() => setnavOption(1)}
               >
-                <h3>For Students & Graduates</h3>
+                <h3 className="hover:font-[700]">For Students & Graduates</h3>
               </div>
               <div
                 className={`${
@@ -31,7 +31,7 @@ const NavBar = ({ simple, back }) => {
                 } p-2 px-[16px] flex rounded-[2px] text-[14px] cursor-pointer transition-all ease-in`}
                 onClick={() => setnavOption(2)}
               >
-                <h3>For Partners</h3>
+                <h3 className="hover:font-[700]">For Partners</h3>
               </div>
             </div>
           </div>

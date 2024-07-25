@@ -1,20 +1,35 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { verify } from "../assets";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ProgressBar from "../components/ProgressBar";
 
 const VerifyAccount = () => {
   const navigate = useNavigate();
+  const [time, settime] = useState(0)
+
+  
   useEffect(() => {
+    const interval = setInterval(() => {
+      if (time === 10) {
+        clearInterval(interval); // stop the interval
+        navigate("/career-status");
+      } else {
+        settime(time + 1);
+      }
+    }, 1000);
+
+    // Cleanup interval on component unmount
+    return () => clearInterval(interval);
+  }, [navigate, time]);
+  useEffect(()=> {
     toast.info("Please wait...", {position: "bottom-right",});
-    setTimeout(() => {
-      navigate("/career-status");
-    }, 3000);
-  }, []);
+  }, [])
   return (
     <div className="w-full h-[583px] pri">
       <ToastContainer />
+      <div className="bg-[#0B8659] w-fit rounded-full absolute right-[5dvw] top-[12dvh]"><ProgressBar progress={time*10}/></div>
       <div className="w-full h-full bg-white flex justify-center items-center">
         <div className="pb-8 px-4 w-full flex flex-col justify-center items-center gap-4">
           <img src={verify} alt="img" className="w-[106px] sm:w-[162px]" />

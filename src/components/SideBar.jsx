@@ -4,7 +4,7 @@ import ProgressBar from "./ProgressBar";
 import { GiCheckMark } from "react-icons/gi";
 
 
-const SideBar = ({profileTasks}) => {
+const SideBar = ({profileTasks, percent}) => {
   
   return (
     <div className="sm:w-[205px] md:w-[272px] bg-[#0B8659] h-fit rounded-[2px]">
@@ -18,7 +18,7 @@ const SideBar = ({profileTasks}) => {
           <h3 className="font-[500] text-white text-[16px]">
             Profile <br /> Completion
           </h3>
-          <ProgressBar progress={0} />
+          <ProgressBar progress={percent} />
         </div>
       </div>
       <div className="flex-col gap-3 p-4 hidden sm:flex">

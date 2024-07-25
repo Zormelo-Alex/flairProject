@@ -33,81 +33,90 @@ const Education = ({ onClick, isOpen, setIsOpen }) => {
             </svg>
           </button>
         </div>
-        <div className="flex flex-col gap-4 mt-4 px-4 py-3">
-          <div className="flex flex-col">
-            <label htmlFor="" className="text-xs text-[#818181] font-[500]">
-              Institution
-            </label>
-            <select
-              name=""
-              id=""
-              className="w-full border text-xs border-[#E8E8E8] rounded-[2px] h-[45px] outline-none px-2"
+        <form action="">
+          <div className="flex flex-col gap-4 mt-4 px-4 py-3">
+            <div className="flex flex-col">
+              <label htmlFor="" className="text-xs text-[#818181] font-[500]">
+                Institution
+              </label>
+              <select
+                name=""
+                id=""
+                className="w-full border text-xs border-[#E8E8E8] rounded-[2px] h-[45px] outline-none px-2"
+              >
+                <option value="">Search institution</option>
+                <option value="">Ho Technical University</option>
+              </select>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="flex flex-col">
+                <label htmlFor="" className="text-xs text-[#818181] font-[500]">
+                  Qualification
+                </label>
+                <select
+                  name=""
+                  id=""
+                  className="w-full border text-xs border-[#E8E8E8] rounded-[2px] h-[45px] outline-none px-2"
+                >
+                  <option value=""></option>
+                </select>
+              </div>
+              <div className="flex flex-col">
+                <label htmlFor="" className="text-xs text-[#818181] font-[500]">
+                  Course Category
+                </label>
+                <select
+                  name=""
+                  id=""
+                  className="w-full border text-xs border-[#E8E8E8] rounded-[2px] h-[45px] outline-none px-2"
+                >
+                  <option value=""></option>
+                </select>
+              </div>
+            </div>
+            <div className="flex flex-col">
+              <label htmlFor="" className="text-xs text-[#818181] font-[500]">
+                Course of study
+              </label>
+              <input
+                type="text"
+                className="w-full border border-[#E8E8E8] rounded-[2px] h-[45px] outline-none px-2"
+              />
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              <div className="flex flex-col">
+                <label htmlFor="" className="text-xs text-[#818181] font-[500]">
+                  Start date
+                </label>
+                <input
+                  type="date"
+                  className="w-full border border-[#E8E8E8] rounded-[2px] h-[45px] outline-none px-2"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label htmlFor="" className="text-xs text-[#818181] font-[500]">
+                  End date
+                </label>
+                <input
+                  type="date"
+                  className="w-full border border-[#E8E8E8] rounded-[2px] h-[45px] outline-none px-2"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="text-sm flex justify-end px-4 py-3">
+            <button
+              className="bg-[#E8E8E8] hover:text-white hover:bg-black transition-all ease-in px-6 rounded-[2px] py-2 text-[#818181]"
+              onClick={(e) => {
+                e.preventDefault();
+                setIsOpen(false)
+                onClick();
+              }}
             >
-              <option value="">Search institution</option>
-              <option value="">Ho Technical University</option>
-            </select>
+              Save
+            </button>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div className="flex flex-col">
-              <label htmlFor="" className="text-xs text-[#818181] font-[500]">
-                Qualification
-              </label>
-              <select
-                name=""
-                id=""
-                className="w-full border text-xs border-[#E8E8E8] rounded-[2px] h-[45px] outline-none px-2"
-              >
-                <option value=""></option>
-              </select>
-            </div>
-            <div className="flex flex-col">
-              <label htmlFor="" className="text-xs text-[#818181] font-[500]">
-                Course Category
-              </label>
-              <select
-                name=""
-                id=""
-                className="w-full border text-xs border-[#E8E8E8] rounded-[2px] h-[45px] outline-none px-2"
-              >
-                <option value=""></option>
-              </select>
-            </div>
-          </div>
-          <div className="flex flex-col">
-            <label htmlFor="" className="text-xs text-[#818181] font-[500]">
-              Course of study
-            </label>
-            <input
-              type="text"
-              className="w-full border border-[#E8E8E8] rounded-[2px] h-[45px] outline-none px-2"
-            />
-          </div>
-          <div className="grid grid-cols-2 gap-3">
-            <div className="flex flex-col">
-              <label htmlFor="" className="text-xs text-[#818181] font-[500]">
-                Start date
-              </label>
-              <input
-                type="date"
-                className="w-full border border-[#E8E8E8] rounded-[2px] h-[45px] outline-none px-2"
-              />
-            </div>
-            <div className="flex flex-col">
-              <label htmlFor="" className="text-xs text-[#818181] font-[500]">
-                End date
-              </label>
-              <input
-                type="date"
-                className="w-full border border-[#E8E8E8] rounded-[2px] h-[45px] outline-none px-2"
-              />
-            </div>
-          </div>
-        </div>
-        <div className="text-sm flex justify-end px-4 py-3">
-          <button className="bg-[#E8E8E8] px-6 rounded-[2px] py-2 text-[#818181]">
-            Save
-          </button>
-        </div>
+        </form>
       </div>
     </div>
   );

@@ -34,14 +34,23 @@ const Accomplishments = ({ onClick, isOpen, setIsOpen }) => {
             </svg>
           </button>
         </div>
-        <div className="px-4 py-3 h-fit">
-          <QuillTextEditor />
-        </div>
-        <div className="text-sm flex justify-end px-4 py-3">
-          <button className="bg-black px-6 rounded-[2px] py-2 text-white">
-            Save
-          </button>
-        </div>
+        <form action="">
+          <div className="px-4 py-3 h-fit">
+            <QuillTextEditor />
+          </div>
+          <div className="text-sm flex justify-end px-4 py-3">
+            <button
+              className="bg-black px-6 rounded-[2px] py-2 text-white hover:text-white hover:bg-black transition-all ease-in"
+              onClick={(e) => {
+                e.preventDefault();
+                setIsOpen(false);
+                onClick();
+              }}
+            >
+              Save
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   );
